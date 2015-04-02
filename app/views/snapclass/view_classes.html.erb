@@ -1,0 +1,12 @@
+<table id="classes">   
+  <tr>
+  	<th> Class Title </th>
+  	<th> Description </th>
+  </tr>
+  <% @classes.each do |one_class| %>
+	  <tr>
+	    <td><%=	one_class.title %></td>
+	    <td><%= one_class.description %></td>
+	  </tr>
+	<% end %>
+</table>

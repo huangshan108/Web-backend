@@ -16,6 +16,9 @@ Rails.application.routes.draw do
   resources :snapuser
   resources :snapproject
   resources :snapclass
+
+  get 'teacher/view-classes/:teacher_id' => 'snapclass#view_classes', :as => :view_classes
+
   resources :snapassignments
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products

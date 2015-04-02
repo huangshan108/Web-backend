@@ -4,11 +4,14 @@
 
 %ul#details
   %li
-    email:
+    Email:
     = @user.email
   %li
-    account type:
+    Account Type:
     = @user.account_type
+  %li
+    Teacher's Name:
+    = @user.teacher.name
 - if @user == current_snapuser
   = link_to 'Edit', edit_snapuser_registration_path
   = link_to 'Create project', new_snapproject_path
@@ -16,3 +19,4 @@
     = link_to 'Create a new class', new_snapclass_path
   = button_to 'Delete', snapuser_path(@user), :method => :delete, :confirm => 'Are you sure?'
 = link_to 'Back to User list', snapuser_index_path
+= link_to 'View My Classes', view_classes_path(@user.teacher.id)

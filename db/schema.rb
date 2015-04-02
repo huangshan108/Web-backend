@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302060320) do
+ActiveRecord::Schema.define(version: 20150402092309) do
 
   create_table "snapassignments", force: :cascade do |t|
     t.integer "snapclass_id"
@@ -49,5 +49,12 @@ ActiveRecord::Schema.define(version: 20150302060320) do
 
   add_index "snapusers", ["email"], name: "index_snapusers_on_email", unique: true
   add_index "snapusers", ["reset_password_token"], name: "index_snapusers_on_reset_password_token", unique: true
+
+  create_table "teachers", force: :cascade do |t|
+    t.integer  "snapuser_id"
+    t.string   "name"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
 end
